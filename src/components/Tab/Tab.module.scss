@@ -1,0 +1,32 @@
+.tab {
+  overflow: hidden;
+  padding: 10px 0;
+
+  &__line {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../assets/svg/arrow_right.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &_type_down {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__comments {
+    padding-left: 50px;
+  }
+}
