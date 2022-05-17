@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rpdu/static/css/main.ba3f35f3.css",
+    "main.js": "/rpdu/static/js/main.c6473b08.js",
+    "static/js/787.ac8e0353.chunk.js": "/rpdu/static/js/787.ac8e0353.chunk.js",
+    "index.html": "/rpdu/index.html",
+    "static/media/arrow_right.svg": "/rpdu/static/media/arrow_right.3a6bffe6743f99b64286.svg",
+    "main.ba3f35f3.css.map": "/rpdu/static/css/main.ba3f35f3.css.map",
+    "main.c6473b08.js.map": "/rpdu/static/js/main.c6473b08.js.map",
+    "787.ac8e0353.chunk.js.map": "/rpdu/static/js/787.ac8e0353.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba3f35f3.css",
+    "static/js/main.c6473b08.js"
+  ]
+}
