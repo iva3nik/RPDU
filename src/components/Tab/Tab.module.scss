@@ -1,10 +1,14 @@
 .tab {
   overflow: hidden;
-  padding: 10px 0;
+  cursor: pointer;
 
   &__line {
     display: flex;
     align-items: center;
+    transition: all 0.3s linear;
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   &__arrow {

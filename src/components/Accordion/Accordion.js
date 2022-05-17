@@ -9,7 +9,7 @@ const Accordion = ({ posts }) => {
     <div className={s.accordion}>
       {posts &&
         posts.map((post) => (
-          <div key={post.id}>
+          <div className={s.accordion__tab} key={post.id}>
             <Tab post={post} />
           </div>
         ))}
