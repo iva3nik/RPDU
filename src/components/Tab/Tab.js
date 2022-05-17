@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import cn from "classnames";
 
+import Loader from "../Loader/Loader";
+
 import s from "./Tab.module.scss";
 
 import * as main from "../../utils/MainApi";
@@ -8,15 +10,18 @@ import * as main from "../../utils/MainApi";
 const Tab = ({ post }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const openTab = () => {
+    !isOpened && setIsLoading(true);
     setIsOpened(!isOpened);
 
     !isOpened &&
       main
         .getComments(post.id)
         .then((data) => setComments(data))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .finally(() => setIsLoading(false));
   };
 
   return (
@@ -30,6 +35,11 @@ const Tab = ({ post }) => {
         </h2>
       </div>
       <div className={s.tab__comments}>
+        {isLoading && (
+          <div className={s.tab__loader}>
+            <Loader />
+          </div>
+        )}
         {isOpened &&
           comments &&
           comments.map((comment) => (
