@@ -11,10 +11,12 @@ const Tab = ({ post }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isActivePoint, setIsActivePoint] = useState(0);
 
   const openTab = () => {
     !isOpened && setIsLoading(true);
     setIsOpened(!isOpened);
+    !isOpened && setIsActivePoint(0);
 
     !isOpened &&
       main
@@ -23,6 +25,8 @@ const Tab = ({ post }) => {
         .catch((err) => console.log(err))
         .finally(() => setIsLoading(false));
   };
+
+  const handleActivePoint = (index) => setIsActivePoint(index);
 
   return (
     <div className={s.tab}>
@@ -42,8 +46,14 @@ const Tab = ({ post }) => {
         )}
         {isOpened &&
           comments &&
-          comments.map((comment) => (
-            <p className={s.tab__comment} key={comment.id}>
+          comments.map((comment, index) => (
+            <p
+              className={cn(s.tab__comment, {
+                [s.tab__comment_active]: index === isActivePoint,
+              })}
+              key={comment.id}
+              onClick={() => handleActivePoint(index)}
+            >
               {comment.name}
             </p>
           ))}

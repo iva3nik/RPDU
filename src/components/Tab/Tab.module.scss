@@ -31,7 +31,19 @@
   }
 
   &__comments {
-    padding-left: 50px;
+    padding: 10px 0 0 40px;
+  }
+
+  &__comment {
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    transition: all 0.3s linear;
+    &:hover {
+      background: rgba(201, 194, 194, 0.6);
+    }
+    &_active {
+      background: rgb(201, 194, 194);
+    }
   }
 
   &__loader {
